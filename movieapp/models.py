@@ -10,7 +10,7 @@ class Genre(models.Model):
 
 class Movie(models.Model): 
   user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-  genre = models.ForeignKey(Genre, on_delete=models.CASCADE, null=True)
+  genre = models.ManyToManyField(Genre)
   name = models.CharField(max_length=200, null=True, blank=True)
   image = models.ImageField(null=True, blank=True)
   country = models.CharField(max_length=200, null=True, blank=True)

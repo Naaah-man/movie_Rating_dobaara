@@ -13,7 +13,7 @@ def getMovies(request):
   return Response(serializer.data)
 
 @api_view(['GET'])
-def getMovie(request):
+def getMovie(request, pk):
   movie = Movie.objects.get(_id=pk)
   serializer = MovieSerializer(movie, many=False) 
   return Response(serializer.data)
